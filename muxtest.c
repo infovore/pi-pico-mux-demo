@@ -13,7 +13,7 @@
 
 int counter = 0;
 int countOffset = 6;
-int maxCount = 20;
+int maxCount = 20; // 2x the number of LEDs we have
 int delay = 50;
 
 int muxMask;
@@ -36,17 +36,20 @@ int main() {
   while (true) {
     // LED output pin is always on
     gpio_put(OUTPUT_PIN, 1);
-    // convert counter to binary
+
+    // setup the actual LED to light
+    // we count to 20, then use the second half of the loop
+    // as our 'reversed' output for the ping-pong effect.
     uint outputCount = counter;
     if(outputCount >= 10) {
       outputCount = maxCount-outputCount-1;
     }
+    
+    // convert our number to binary, and turn it into a valid output mask
     uint outputCountMask = (outputCount+countOffset) << FIRST_MUX_PIN;
-    // write counter
     gpio_put_masked(muxMask,outputCountMask);
-    // sleep for a while
+
     sleep_ms(delay);
-    // increment counter
     counter = (counter+1) % maxCount;
   }
 }
