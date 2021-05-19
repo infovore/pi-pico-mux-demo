@@ -9,7 +9,7 @@ A Pi Pico, 10 LEDs (and resistors), and a 4067-style multiplexer. (I'm using a 7
 * Multiplexer pins 6-15 go to LEDs 0-10 respectively
 * Multiplexer EN to GND
 * Multiplexer SIGNAL to GP6
-* Multiplexer S0-23 to GP2-GP5 respectively
+* Multiplexer S0-S3 to GP2-GP5 respectively
 
 ## What you should see
 
