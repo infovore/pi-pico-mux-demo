@@ -1,7 +1,8 @@
 /**
- * Copyright (c) 2020 Raspberry Pi (Trading) Ltd.
+ * Multiplexed scrolling lights demo.
  *
- * SPDX-License-Identifier: BSD-3-Clause
+ * See README.md for pinout / circuit configuration
+ * Tom Armitage [tom@infovore.org]
  */
 
 #include "pico/stdlib.h"
